@@ -13,7 +13,6 @@
 
 
 .restaurants-container{
-    /* padding-left: 10%; */
     display: flex;
     width: 100%;
     gap: 1rem;
@@ -24,4 +23,10 @@
     mask-image: linear-gradient(to right, rgb(255, 255, 255) 98%, transparent);
 }
 
+
+@media (max-width: 565px) {
+    .featured-restaurants{
+        width: 90vw;
+    }
+}
 

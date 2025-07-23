@@ -25,7 +25,10 @@
     background-color: var(--primary-orange);
     border-radius: 1rem;
     padding: 0.5rem;
-    transition: 0.2s;   
+    transition: 0.2s;  
+    
+    scale: 0.8;
+    opacity: 0;
 }
 
 .dish img{
