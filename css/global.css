@@ -1,0 +1,20 @@
+:root{
+    --primary-green: #34554E;
+    --primary-orange: rgb(255, 101, 30);
+    --body-background-color: #FEECC8;
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--body-background-color);
+    min-height: 100dvh;
+    min-height: 100vh;
+    width: 100vw;
+}

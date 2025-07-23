@@ -1,0 +1,16 @@
+main{
+    background-color: var(--body-background-color);
+    margin-top: calc(100vw/2.8) ;
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 4rem);
+    padding-block: 2rem 10%;
+
+}
+
+h2{
+    margin-top: 2rem;
+    font-size: clamp(1.2rem, 1.6vw, 2rem);
+}
+
+

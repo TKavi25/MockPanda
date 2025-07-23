@@ -1,0 +1,195 @@
+header{
+    position: sticky;
+    top: 0px;
+    background-color: var(--primary-green);
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    z-index: 2;
+}
+
+nav{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* logo */
+    .logo{
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+    #logo{
+        margin-top: 1rem;
+        height: 4.5rem;
+    }
+
+    h1{
+        color: #2b1616;
+        font-size: 3rem;
+    }
+    h1 span{
+        color: var(--primary-orange);
+    }
+/* / */
+
+
+
+/*  */
+ul{
+    width: 60%;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+li{
+    height: 100%;
+}
+li a{
+    display: flex;
+    align-items: center;
+    padding-inline: 1.5rem;
+    height: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+li:hover{
+        background-color: rgba(0, 0, 0, 0.274);
+    }
+
+/* / */
+
+
+
+/*  */
+form{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-grow: 1;
+}
+
+#search{
+    height: 50%;
+    width: 90%;
+    padding-inline: 2.5rem 1rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.329);
+    border: none;
+    border-radius: 5px;
+    
+}
+#search:focus {
+  outline: none;
+  box-shadow: none;
+  border: none; /* or set to your desired style */
+}
+
+form button{
+    position: absolute;
+    background: none;
+    border: none;
+    width: 1.5rem;
+    top: 33%;
+    left: 7%;
+    cursor: pointer;
+}
+
+/* / */
+
+
+
+/*  */
+
+.nav-bars{
+    height: 70%;
+    z-index: 10;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: none;
+    border-radius: 25px;
+    transition: 0.15s;
+}
+.burger-menu-icon{
+    height: 100%;
+}
+.nav-bars:hover{
+    background-color: #48776dd5;
+}
+
+/* / */
+
+
+
+/* cross animation */
+
+.first-nav-bar{
+    transform-origin: center;
+    transition: y 0.2s 0.2s, transform 0.2s;
+}
+.second-nav-bar{
+    transform-origin: center;
+    transition: opacity 0s 0.2s;
+}
+.third-nav-bar{
+    transform-origin: center;
+    transition: y 0.2s 0.2s, transform 0.2s;
+}
+
+
+
+.nav-bars[aria-expanded="true"] .first-nav-bar{
+    transition: y 0.2s, transform 0.2s 0.2s;
+    y: 45px;
+    transform: rotate(-45deg);
+
+}
+.nav-bars[aria-expanded="true"] .second-nav-bar{
+    opacity: 0;
+    transition: opacity 0s 0.2s;
+}
+.nav-bars[aria-expanded="true"] .third-nav-bar{
+    transition: y 0.2s, transform 0.2s 0.2s;
+    y: 45px;
+    transform: rotate(45deg);
+}
+
+/* / */
+
+
+
+.dark-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 8;
+    background-color: rgba(0, 0, 0, 0.726);
+    display: none;
+}

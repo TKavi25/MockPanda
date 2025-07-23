@@ -1,0 +1,96 @@
+.restaurant{
+    border: solid rgb(129, 129, 129) 1px;
+    aspect-ratio: 1.5/1;
+    width: clamp(14rem, 100%, 28rem);
+    border-radius: 1.5rem;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+    container-type: inline-size;
+
+
+    animation: scroll-in-out ;
+    animation-timeline: view(x);
+    animation-range: entry;
+
+
+}
+
+@supports (animation-timeline:auto){
+
+    @keyframes scroll-in-out{
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+        }
+    }
+}
+
+
+.restaurant-offer{
+    position: absolute;
+    background-color: var(--primary-green);
+    width: 100%;
+    top: 2cqh;
+    z-index: 1;
+    text-align: right;
+    padding-inline: 1rem;
+    color: white;
+}
+
+
+
+.restaurant img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+
+.restaurant-details{
+    background-color: var(--body-background-color);
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0px;
+    padding-inline: 7cqw;
+    border-top: solid rgb(129, 129, 129) 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.important-restaurant-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-weight: 600;
+    font-size: 5.5cqw;
+
+}
+.important-restaurant-details span, .more-restaurant-details{
+    color: rgb(29, 29, 29);
+    font-weight: 500;
+    font-size: 4.5cqw;
+}
+
+.important-restaurant-details div:first-child{
+    width: 40cqw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.restaurant:hover img{
+    scale: 1.1;
+}
+.restaurant:active{
+    scale: 0.9;
+}
