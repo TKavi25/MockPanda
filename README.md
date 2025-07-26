@@ -6,7 +6,7 @@ MockPanda is a mock food delivery page designed as a frontend project to sharpen
 
 ## 📸 Image Credits  
 All food images used in this project are from [Unsplash](https://unsplash.com).  
-Each image filename in the `content/restaurant-img` folder includes the name of the original photographer for credit.
+Each image filename in the `content` folder includes the name of the original photographer for credit.
 
 ## 🌐 Best Viewed In  
 For the best experience, view the site in the latest version of **Google Chrome**.
