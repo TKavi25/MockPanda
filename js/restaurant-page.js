@@ -1,19 +1,30 @@
 import "./load.js"
 import "./navBar.js"
-import { restaurants } from "./data.js"
+import { generateRestaurantHtml } from "./generate-restaurantHtml.js";
+
+async function getRestaurantData() {
+    try {
+        const response = await fetch("js/data.json")
+
+        if(!response.ok){
+            throw new Error("failed to fetch");
+        }
+        const restaurantData = await response.json();
+
+        restaurantData.forEach(restaurant =>{
+            htmlContainer.innerHTML +=
+                `<div class="restaurant">
+                    ${generateRestaurantHtml(restaurant)}
+                </div>`
+        });
+
+
+
+    } catch (error) {
+        htmlContainer.innerHTML = `<h3 style="color: black;">${error}. Please try again later.</h3>`;
+    }
+}
+
 
 const htmlContainer = document.querySelector("main");
-
-restaurants.forEach(restaurant =>{
-    htmlContainer.innerHTML +=
-            `<div class="restaurant">
-                <img src="${restaurant.img}" alt= "restaurant: ${restaurant.name}">
-                <div class="restaurant-details">
-                    <div class="important-restaurant-details">
-                        <div>${restaurant.name}</div>
-                        <div>⭐ ${restaurant.rating} <span>(${restaurant.ratingAmount})</span></div>
-                    </div>
-                    <div class="more-restaurant-details">🚴🏽 ${restaurant.distance} ◦ ৳${restaurant.deliveryFee}</div>
-                </div>
-            </div>`
-});
+getRestaurantData()
