@@ -1,5 +1,5 @@
 import "./load.js"
-import "./navBar.js"
+import { addHeader } from "./header.js";
 import { generateRestaurantHtml } from "./generate-restaurantHtml.js";
 
 async function getRestaurantData() {
@@ -24,4 +24,6 @@ async function getRestaurantData() {
         htmlContainer.innerHTML = `<h3 style="color: black;">${error}. Please try again later.</h3>`;
     }
 }
+
+addHeader();
 getRestaurantData()

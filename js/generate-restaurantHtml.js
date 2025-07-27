@@ -30,15 +30,12 @@ export function generateRestaurantHtml(restaurant){
     const moreDetails = document.createElement("div");
     moreDetails.innerText = "🚴🏽" + restaurant.distance + "◦ ৳" + restaurant.deliveryFee;
 
-    restaurantDiv.append(restaurantOffer);
-    restaurantDiv.append(restaurantImg);
-    restaurantDiv.append(restaurantDetails);
     
-    restaurantDetails.append(ImportantRestaurantDetails);
-    restaurantDetails.append(moreDetails)
+    restaurantDiv.append(restaurantOffer, restaurantImg, restaurantDetails);
+    
+    restaurantDetails.append(ImportantRestaurantDetails, moreDetails);
 
-    ImportantRestaurantDetails.append(restaurantName);
-    ImportantRestaurantDetails.append(restaurantRating)
+    ImportantRestaurantDetails.append(restaurantName, restaurantRating);
     
     restaurantRating.append(ratingAmount);
 

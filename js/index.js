@@ -1,6 +1,7 @@
-import "./get-app.js";
-import "./navBar.js";
+import { addHeader } from "./header.js";
 import { generateRestaurantHtml } from "./generate-restaurantHtml.js";
+import "./get-app.js";
+
 import "./load.js"
 
 
@@ -29,4 +30,9 @@ async function getRestaurantData() {
     }
     
 }
-getRestaurantData()
+
+
+
+
+addHeader();
+getRestaurantData();
