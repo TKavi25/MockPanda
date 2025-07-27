@@ -25,7 +25,7 @@ export function generateRestaurantHtml(restaurant){
     restaurantRating.innerText = "⭐" + restaurant.rating
 
     const ratingAmount = document.createElement("span");
-    ratingAmount.innerText = restaurant.ratingAmount;
+    ratingAmount.innerText = "(" + restaurant.ratingAmount + ")";
 
     const moreDetails = document.createElement("div");
     moreDetails.innerText = "🚴🏽" + restaurant.distance + "◦ ৳" + restaurant.deliveryFee;

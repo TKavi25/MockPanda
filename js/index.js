@@ -9,6 +9,8 @@ import "./load.js"
 
 
 async function getRestaurantData() {
+    
+    const htmlContainer = document.querySelector(".restaurants-container");
 
     try {
         const response = await fetch("js/data.json");
@@ -19,7 +21,6 @@ async function getRestaurantData() {
 
 
         const restaurantData = await response.json();
-        const htmlContainer = document.querySelector(".restaurants-container");
 
         restaurantData.slice(0, 5).forEach(restaurant =>{
                 htmlContainer.append(generateRestaurantHtml(restaurant));

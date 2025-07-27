@@ -3,6 +3,9 @@ import { addHeader } from "./header.js";
 import { generateRestaurantHtml } from "./generate-restaurantHtml.js";
 
 async function getRestaurantData() {
+
+    const htmlContainer = document.querySelector("main");
+
     try {
         const response = await fetch("js/data.json")
 
@@ -11,10 +14,9 @@ async function getRestaurantData() {
         }
         const restaurantData = await response.json();
 
-        const discountedRestaurants = restaurantData.filter(restaurant => restaurant.discount > 0);
+        const discountedRestaurants = restaurantData.filter(restaurant => Number(restaurant.discount) > 0);
 
-        const htmlContainer = document.querySelector("main");
-
+        
         if(discountedRestaurants.length === 0){
             htmlContainer.innerHTML = `<h3>No offers available.</h3>`;
         }else{

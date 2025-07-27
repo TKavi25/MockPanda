@@ -3,6 +3,10 @@ import { addHeader } from "./header.js";
 import { generateRestaurantHtml } from "./generate-restaurantHtml.js";
 
 async function getRestaurantData() {
+
+    const htmlContainer = document.querySelector("main");
+
+
     try {
         const response = await fetch("js/data.json")
 
@@ -11,8 +15,7 @@ async function getRestaurantData() {
         }
         const restaurantData = await response.json();
 
-        const htmlContainer = document.querySelector("main");
-
+        
         restaurantData.forEach(restaurant =>{
 
             htmlContainer.append(generateRestaurantHtml(restaurant));
