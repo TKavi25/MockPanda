@@ -1,12 +1,52 @@
 export function generateRestaurantHtml(restaurant){
-    const restaurantHtml =
-        `<img src="${restaurant.img}" alt= "restaurant: ${restaurant.name}">
-            <div class="restaurant-details">
-                <div class="important-restaurant-details">
-                    <div>${restaurant.name}</div>
-                    <div>⭐ ${restaurant.rating} <span>(${restaurant.ratingAmount})</span></div>
-                </div>
-                <div class="more-restaurant-details">🚴🏽 ${restaurant.distance} ◦ ৳${restaurant.deliveryFee}</div>
-            </div>`;
-    return restaurantHtml
+
+
+    const restaurantDiv = document.createElement("div");
+    restaurantDiv.classList.add("restaurant");
+
+    const restaurantOffer = document.createElement("div");
+    restaurantOffer.classList.add("restaurant-offer");
+    restaurantOffer.innerText = restaurant.discount + "% Off";
+
+    const restaurantImg = document.createElement("img");
+    restaurantImg.src = restaurant.img;
+    restaurantImg.alt = "restaurant: " + restaurant.name;
+
+    const restaurantDetails = document.createElement("div");
+    restaurantDetails.classList.add("restaurant-details");
+
+    const ImportantRestaurantDetails = document.createElement("div");
+    ImportantRestaurantDetails.classList.add("important-restaurant-details");
+
+    const restaurantName = document.createElement("div");
+    restaurantName.innerText = restaurant.name;
+
+    const restaurantRating = document.createElement("div");
+    restaurantRating.innerText = "⭐" + restaurant.rating
+
+    const ratingAmount = document.createElement("span");
+    ratingAmount.innerText = restaurant.ratingAmount;
+
+    const moreDetails = document.createElement("div");
+    moreDetails.innerText = "🚴🏽" + restaurant.distance + "◦ ৳" + restaurant.deliveryFee;
+
+    restaurantDiv.append(restaurantOffer);
+    restaurantDiv.append(restaurantImg);
+    restaurantDiv.append(restaurantDetails);
+    
+    restaurantDetails.append(ImportantRestaurantDetails);
+    restaurantDetails.append(moreDetails)
+
+    ImportantRestaurantDetails.append(restaurantName);
+    ImportantRestaurantDetails.append(restaurantRating)
+    
+    restaurantRating.append(ratingAmount);
+
+    if(restaurant.discount > 0){
+        restaurantOffer.style.display = "block";
+    }else{
+        restaurantOffer.style.display = "none";
+    }
+
+    return restaurantDiv;
 }

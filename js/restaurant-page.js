@@ -11,11 +11,11 @@ async function getRestaurantData() {
         }
         const restaurantData = await response.json();
 
+        const htmlContainer = document.querySelector("main");
+
         restaurantData.forEach(restaurant =>{
-            htmlContainer.innerHTML +=
-                `<div class="restaurant">
-                    ${generateRestaurantHtml(restaurant)}
-                </div>`
+
+            htmlContainer.append(generateRestaurantHtml(restaurant));
         });
 
 
@@ -24,7 +24,4 @@ async function getRestaurantData() {
         htmlContainer.innerHTML = `<h3 style="color: black;">${error}. Please try again later.</h3>`;
     }
 }
-
-
-const htmlContainer = document.querySelector("main");
 getRestaurantData()

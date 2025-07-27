@@ -13,15 +13,13 @@ async function getRestaurantData() {
 
         const discountedRestaurants = restaurantData.filter(restaurant => restaurant.discount > 0);
 
+        const htmlContainer = document.querySelector("main");
+
         if(discountedRestaurants.length === 0){
             htmlContainer.innerHTML = `<h3>No offers available.</h3>`;
         }else{
             discountedRestaurants.forEach(restaurant =>{
-                htmlContainer.innerHTML +=
-                    `<div class="restaurant">
-                        <div class="restaurant-offer">${restaurant.discount}%</div>
-                        ${generateRestaurantHtml(restaurant)}
-                    </div>`
+                htmlContainer.append(generateRestaurantHtml(restaurant));
             });
         }
 
@@ -33,8 +31,5 @@ async function getRestaurantData() {
         htmlContainer.innerHTML = `<h3 style="color: black;">${error}. Please try again later.</h3>`;
     }
 }
-
-
-const htmlContainer = document.querySelector("main");
 getRestaurantData()
 
